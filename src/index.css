@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Caveat:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #0a0118;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: 'Quicksand', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 61, 143, 0.4);
+  border-radius: 999px;
+}
+
+.touch-none {
+  touch-action: manipulation;
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #ff9ecb 0%,
+    #ffd966 25%,
+    #ff3d8f 50%,
+    #ffd966 75%,
+    #ff9ecb 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective {
+  perspective: 900px;
+}
+
+.paper-edge {
+  -webkit-mask-image: radial-gradient(
+    120% 120% at 50% 50%,
+    #000 92%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    120% 120% at 50% 50%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
